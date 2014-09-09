@@ -2,7 +2,7 @@
   $response = array(
                 "status" => "success",
                 "msg" => "Hello world",
-                "collaborator" => "Sudeep"
+                "envVar" => getenv('MY_VAR')
               );
               
   
