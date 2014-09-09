@@ -1,7 +1,7 @@
 <?php
   $response = array(
-                "status":"success",
-                "msg":"Hello world"
+                "status" => "success",
+                "msg" => "Hello world"
               );
               
   
