@@ -20,11 +20,11 @@
     
     $messages = pg_fetch_assoc($rs);
     
-    print_r($messages);exit;
+    //print_r($messages);exit;
 
 	$response = array(
 					"status" => "success",
-					"msg" => $messages[0]['msg'],
+					"msg" => $messages['msg'],
 					"envVar" => getenv('MY_VAR')
 				);
               
