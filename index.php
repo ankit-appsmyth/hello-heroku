@@ -19,6 +19,8 @@
     $rs = pg_query($con, $query) or die("Cannot execute query: $query\n");
     
     $messages = pg_fetch_assoc($rs);
+    
+    print_r($messages);exit;
 
 	$response = array(
 					"status" => "success",
