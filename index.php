@@ -1,11 +1,23 @@
 <?php
-  $response = array(
-                "status" => "success",
-                "msg" => "Hello world"
-              );
+	
+	$dbopts = parse_url(getenv('DATABASE_URL'));
+
+	$dbparams = array(
+					'pdo.dsn' => 'pgsql:dbname='.ltrim($dbopts["path"],'/').';host='.$dbopts["host"],
+					'pdo.port' => $dbopts["port"],
+					'pdo.username' => $dbopts["user"],
+					'pdo.password' => $dbopts["pass"]
+			  	);
+
+	print_r($dbparams);exit;
+
+	$response = array(
+					"status" => "success",
+					"msg" => "Hello world"
+				);
               
   
-  echo json_encode($response);
-  exit;
+	echo json_encode($response);
+ 	exit;
   
 ?>
