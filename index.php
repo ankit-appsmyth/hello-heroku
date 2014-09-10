@@ -9,7 +9,7 @@
 					'pdo.password' => $dbopts["pass"]
 			  	);
 
-	print_r($dbparams);exit;
+	//print_r($dbparams);exit;
 
   $response = array(
 		        "status" => "success",
