@@ -11,7 +11,7 @@
 
 	//print_r($dbparams);exit;
 	
-	$con = pg_connect("host=".$dbopts["host"]." dbname=".$dbopts["port"]." user=".$dbopts["user"]." password=".$dbopts["pass"])
+	$con = pg_connect("host=".$dbopts["host"]." dbname=".ltrim($dbopts["path"],'/')." user=".$dbopts["user"]." password=".$dbopts["pass"])
     or die ("Could not connect to server\n");
     
     $query = "SELECT msg FROM messages WHERE id= 1"; 
