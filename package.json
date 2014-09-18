@@ -1,6 +1,9 @@
 {
 	"name": "node-api",
-	"main": "server.js",
+	main": "server.js",
+  	"scripts": {
+	    "start": "node server.js"
+  	},
 	"dependencies": {
 		"express": "~4.9.0",
     	"body-parser": "~1.8.1"
