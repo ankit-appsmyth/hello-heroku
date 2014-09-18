@@ -1,5 +1,5 @@
 var message = {
-    status:"fail",
+    status:"success",
 	msg:"This is msg comes from database",
 	envVar:"HE'EEY!!!",
     getMsg: function () {
