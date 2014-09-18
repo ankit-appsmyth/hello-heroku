@@ -1,12 +1,12 @@
 {
 	"name": "node-api",
-	main": "index.js",
+	"main": "index.js",
   	"scripts": {
 	    "start": "node index.js"
   	},
   	"engines": {
 	    "node": "*"
-  	}
+  	},
 	"dependencies": {
 		"express": "~4.9.0",
     	"body-parser": "~1.8.1"
