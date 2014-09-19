@@ -36,5 +36,5 @@ router.route('/message')
 app.use('/api', router);
 
 //START server
-app.listen(port);
+app.listen(process.env.PORT || port);
 console.log("Listening on port : " + port);
