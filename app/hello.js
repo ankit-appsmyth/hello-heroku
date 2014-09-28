@@ -2,12 +2,26 @@ var message = {
     status:"success",
 	msg:"This is msg comes from database",
 	envVar:"HE'EEY!!!",
-    getMsg: function () {
-        return {
-					"status":this.status,
-					"msg":this.msg,
-					"envVar":this.envVar
-				};
+    getMsg: function (callback) {
+
+    	console.log("going to sleep");
+
+    	var that = this;
+
+    	setTimeout(function() {
+	  		console.log('back!');
+	  		
+	  		responseData = {
+				"status" : that.status,
+				"msg" : that.msg,
+				"envVar" : that.envVar
+			};
+
+	  		callback(responseData);
+		}, 5000);
+        
+    	return true;
+
     }
 }
 
