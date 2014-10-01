@@ -9,7 +9,7 @@ var message = {
     	var that = this;
 
     	setTimeout(function() {
-	  		console.log('back!');
+	  		console.log('bayck!');
 	  		
 	  		responseData = {
 				"status" : that.status,
