@@ -25,16 +25,19 @@ router.use(function(request, response, next) {
 var message = require('./app/hello.js');
 //default route
 router.get('/', function (request, response) {
-	response.writeHead(200, {
-		"Content-type" : "text/json"
-	});
-	response.end("Hello World");
+	sendMyRes(response, "Hello World");
+	//response.end("Hello World");
 });
 
 //route on the resource 'message'
 router.route('/message')
 		.get(function(request, response){
-			response.json(message.getMsg());
+			message.getMsg(function(responseMessage){
+				
+				sendMyRes(response, JSON.stringify(responseMessage));
+			
+			});
+			//response.json(message.getMsg());
 		});
 
 //route on the resource 'message'
@@ -79,6 +82,15 @@ app.use(bodyParser.urlencoded({
 	extended: true
 }));
 app.use(bodyParser.json());
+
+//common function to send back response
+function sendMyRes(res, responseData){
+	res.writeHead(200, {
+		"Content-type" : "text/json"
+	});
+	res.end(responseData);
+}
+
 
 //rgister router with app
 app.use('/api', router);
