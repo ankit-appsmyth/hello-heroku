@@ -13,11 +13,12 @@ describe('first', function () {
  });
 	
 	it('post object', function(done){
-		var url = 'http://localhost:'+(process.env.PORT || 8000)+'/';
+		var url = 'http://localhost:'+(process.env.PORT || 8000)+'/api';
 		console.log('url', url);
 		superagent.get(url)
 			.end(function (e,res){
-				console.log(res);
+				console.log(res.body);
+				if(typeof res.body != 'undefined')
 				done();
 			});
 	});
