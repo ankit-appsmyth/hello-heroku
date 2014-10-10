@@ -13,7 +13,8 @@
     	"body-parser": "~1.8.1",
     	"mocha": "*",
     	"i18n" : "*",
-    	"superagent": "*"
+    	"superagent": "*",
+    	"node-cassandra-cql": "*"
 
 	}
 }
