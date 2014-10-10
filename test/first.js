@@ -1,7 +1,22 @@
 var assert = require("assert");
+var http = require("http");
 var superagent = require('superagent')
+var app = require('../index');
+var port = 8000;
+var server;
 
 describe('first', function () {
+	//console.log(app);
+	before(function(done) {
+  		//app.start(done);
+  		done();
+	});
+
+	after(function(done) {
+  		//if (server) server.close(done);
+  		app.stop(done);
+	});
+
  it('print hello world', function (done) {
    var message = require('../app/hello.js');
    var gotMsg = message.getMsg()

@@ -95,6 +95,11 @@ function sendMyRes(res, responseData){
 //rgister router with app
 app.use('/api', router);
 
-//START server
-app.listen(process.env.PORT || port);
+var server = app.listen(process.env.PORT || port);
 console.log("Listening on port : " + port);
+
+//STOP server
+exports.stop = function(cb) {
+	server.close();
+	cb();
+}
